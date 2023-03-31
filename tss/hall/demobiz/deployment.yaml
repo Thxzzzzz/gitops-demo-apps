@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-biz
-  namespace: tss-hall
+  #namespace: tss-hall
   labels:
     name: demo-biz
 spec:
