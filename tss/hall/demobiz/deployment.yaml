@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-biz
+  namespace: tss-hall
+  labels:
+    name: demo-biz
+spec:
+  template:
+    metadata:
+      labels:
+        name: demo-biz
+    spec:
+      containers:
+      - name: demo-biz
+        image: 379809513/demo-biz:v2.2
+        imagePullPolicy: IfNotPresent
+        args:
+          - '--sidecar true'
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 80
+  selector:
+    matchLabels:
+      name: demo-biz
+  replicas: 1
