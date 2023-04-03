@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        name: app_name
+        app: app_name
     spec:
       containers:
       - name: biz-container
