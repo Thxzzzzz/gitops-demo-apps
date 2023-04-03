@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: demo-biz
   namespace: tss-hall
-  labels:
-    name: demo-biz
 spec:
   selector:
     matchLabels:
