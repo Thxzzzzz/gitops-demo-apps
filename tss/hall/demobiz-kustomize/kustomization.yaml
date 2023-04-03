@@ -20,9 +20,6 @@ patches:
       path: /metadata/name
       value: demobiz-kustomize
     - op: replace
-      path: /metadata/app
-      value: demobiz-kustomize 
-    - op: replace
       path: /spec/selector/matchLabels/app
       value: demobiz-kustomize
     - op: replace
