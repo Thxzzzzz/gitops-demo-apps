@@ -1,31 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-biz
+  name: guestbook-ui
   namespace: tss-hall
 spec:
+  replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      name: demo-biz
+      app: guestbook-ui
   template:
     metadata:
       labels:
-        name: demo-biz
+        app: guestbook-ui
     spec:
       containers:
-      - name: demo-biz
-        image: 379809513/demo-biz:v2.2
-        imagePullPolicy: IfNotPresent
-        # args:
-        #   - '--sidecar true'
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 20
-        readinessProbe:
-          httpGet:
-            path: /readyz
-            port: 80
-  replicas: 1
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-ui
+        ports:
+        - containerPort: 80
