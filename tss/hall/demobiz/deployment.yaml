@@ -4,7 +4,7 @@ metadata:
   name: demo-biz
 #  namespace: tss-hall
 spec:
-  replicas: 1
+  # replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
