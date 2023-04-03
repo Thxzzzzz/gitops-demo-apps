@@ -15,14 +15,4 @@ images:
 patches:
 - target:
     kind: Deployment
-  patch: |-
-    - op: replace
-      path: /metadata/name
-      value: demobiz-kustomize
-    - op: replace
-      path: /spec/selector/matchLabels/app
-      value: demobiz-kustomize
-    - op: replace
-      path: /spec/template/metadata/labels/app
-      value: demobiz-kustomize
-
+  path: app_patch.yaml
