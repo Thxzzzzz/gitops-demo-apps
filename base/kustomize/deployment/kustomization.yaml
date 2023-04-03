@@ -1,0 +1,5 @@
+# commonLabels:
+#   app-biz: '266'
+
+resources:
+  - deployment.yaml

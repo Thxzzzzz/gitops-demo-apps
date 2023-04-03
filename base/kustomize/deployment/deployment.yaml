@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app_name
+  app: app_name
+spec:
+  revisionHistoryLimit: 15
+  selector:
+    matchLabels:
+      app: app_name
+  template:
+    metadata:
+      labels:
+        name: app_name
+    spec:
+      containers:
+      - name: biz-container
+        image: app_image:app_tag
+        imagePullPolicy: IfNotPresent

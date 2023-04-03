@@ -1,0 +1,31 @@
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+resources:
+- ../base/deployment
+
+labels:
+  - pairs: 
+      app: demobiz-kustomize
+
+images:
+- name: app_image
+  newName: 379809513/demo-biz
+  newTag: v2.2
+
+patches:
+- target:
+    kind: Deployment
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: demobiz-kustomize
+    - op: replace
+      path: /metadata/app
+      value: demobiz-kustomize 
+    - op: replace
+      path: /spec/selector/matchLabels/app
+      value: demobiz-kustomize
+    - op: replace
+      path: /spec/template/metadata/labels/app
+      value: demobiz-kustomize
+
