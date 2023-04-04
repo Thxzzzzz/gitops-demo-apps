@@ -10,7 +10,7 @@ spec:
       revision: HEAD
       directories:
       - path: tss/hall/*
-      - path: tss/base/*
+      - path: tss/hall/base/*
         exclude: true
   template:
     metadata:
