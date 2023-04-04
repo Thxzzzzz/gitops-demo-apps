@@ -9,9 +9,8 @@ spec:
         repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
         revision: HEAD
         # pathParamPrefix: example
-        files:
-          - path: "tss/hall/*/kustomization.yaml"
         directories:
+          - path : "tss/hall/*"
           - path: "*/base"
             exclude: true
   template:
@@ -22,7 +21,7 @@ spec:
       source:
         repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
         targetRevision: HEAD
-        path:  tsss/hall/{{path.basename}}
+        path:  tss/hall/{{path.basename}}
       destination:
         server: https://kubernetes.default.svc
         namespace: tss-hall
