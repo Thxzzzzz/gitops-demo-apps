@@ -11,7 +11,7 @@ spec:
         # pathParamPrefix: example
         directories:
           - path : "tss/hall/*"
-          - path: "tss/base"
+          - path: "tss/base/*"
             exclude: true
   template:
     metadata:
