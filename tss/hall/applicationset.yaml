@@ -23,7 +23,7 @@ spec:
         repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
         targetRevision: HEAD
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: '{{path}}'
+        path: '{{path[0]}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: tss-hall
