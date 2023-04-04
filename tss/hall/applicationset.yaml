@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: tss-hall
-  namespace: tss-hall
+  namespace: argocd
 spec:
   generators:
     - git:
@@ -11,8 +11,8 @@ spec:
         # pathParamPrefix: example
         directories:
           - path : "tss/hall/*"
-          # - path: "tss/base"
-          #   exclude: true
+          - path: "tss/base"
+            exclude: true
   template:
     metadata:
       # basename is the name of the directory not the full path
