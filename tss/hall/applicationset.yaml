@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
         targetRevision: HEAD
-        path:  tss/hall/{{path.basename}}
+        path:  '{{path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: tss-hall
