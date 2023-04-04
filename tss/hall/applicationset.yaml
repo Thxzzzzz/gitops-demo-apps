@@ -9,7 +9,9 @@ spec:
       repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
       revision: HEAD
       directories:
-      - path: tss/hall/demobiz-kustomize
+      - path: tss/hall/*
+      - path: tss/base/*
+        exclude: true
   template:
     metadata:
       name: '{{path.basename}}'
