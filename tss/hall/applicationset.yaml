@@ -10,8 +10,10 @@ spec:
       revision: HEAD
       directories:
       - path: tss/hall/*
-      - path: tss/hall/base/*
+      - path: tss/hall/base
         exclude: true
+      # - path: tss/hall/base/*
+      #   exclude: true
   template:
     metadata:
       name: '{{path.basename}}'
