@@ -5,25 +5,20 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - git:
-        repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
-        revision: HEAD
-        # pathParamPrefix: example
-        directories:
-          - path : "tss/hall/*"
-          - path: "tss/base/*"
-            exclude: true
+  - git:
+      repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
+      revision: HEAD
+      directories:
+      - path: tss/hall/demobiz-kustomize
   template:
     metadata:
-      # basename is the name of the directory not the full path
       name: '{{path.basename}}'
     spec:
-      project: gitops-demo-github
+      project: default
       source:
         repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
         targetRevision: HEAD
-        # path to read manifests from, here it's the full path not only the name of the directory
-        path: '{{path[0]}}'
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: tss-hall
