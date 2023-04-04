@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-biz-originyam
+  namespace: tss-hall
+spec:
+  # replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: demo-biz-originyam
+  template:
+    metadata:
+      labels:
+        app: demo-biz-originyam
+    spec:
+      containers:
+      - name: demo-biz-originyam
+        image: 379809513/demo-biz:v2.2
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 80
