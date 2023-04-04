@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: tss-hall
+  namespace: tss-hall
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
+        revision: HEAD
+        # pathParamPrefix: example
+        files:
+          - path: "tss/hall/*/kustomization.yaml"
+        directories:
+          - path: "*/base"
+            exclude: true
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: gitops-demo-github
+      source:
+        repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
+        targetRevision: HEAD
+        path:  tsss/hall/{{path.basename}}
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: tss-hall
