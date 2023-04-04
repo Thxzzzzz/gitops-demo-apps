@@ -11,17 +11,19 @@ spec:
         # pathParamPrefix: example
         directories:
           - path : "tss/hall/*"
-          - path: "tss/base"
-            exclude: true
+          # - path: "tss/base"
+          #   exclude: true
   template:
     metadata:
+      # basename is the name of the directory not the full path
       name: '{{path.basename}}'
     spec:
       project: gitops-demo-github
       source:
         repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
         targetRevision: HEAD
-        path:  '{{path}}'
+        # path to read manifests from, here it's the full path not only the name of the directory
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: tss-hall
