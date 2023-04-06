@@ -2,9 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.appName }}
-  app: {{ .Values.appName }}
   namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.appName }}
 spec:
+  revisionHistoryLimit: 15
   selector:
     matchLabels:
       app: {{ .Values.appName }}
