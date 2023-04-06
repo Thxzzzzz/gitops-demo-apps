@@ -3,8 +3,10 @@ kind: Kustomization
 resources:
   - ../base/deployment
 
+
 replacements:
   - path: replacement.yaml
+
 
 labels:
   - pairs:

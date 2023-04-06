@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app_name
+  labels:
+    app: app_name
 spec:
   revisionHistoryLimit: 15
   selector:
