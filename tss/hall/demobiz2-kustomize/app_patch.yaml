@@ -1,9 +1,0 @@
-- op: replace
-  path: /metadata/name
-  value: demobiz2-kustomize
-- op: replace
-  path: /spec/selector/matchLabels/app
-  value: demobiz2-kustomize
-- op: replace
-  path: /spec/template/metadata/labels/app
-  value: demobiz2-kustomize
