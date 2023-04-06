@@ -26,3 +26,7 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: tss-hall
+    syncPolicy:
+      automated:
+        # prune: true
+        selfHeal: true
