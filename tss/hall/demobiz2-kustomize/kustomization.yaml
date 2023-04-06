@@ -10,7 +10,7 @@ labels:
 images:
 - name: app_image
   newName: 379809513/demo-biz
-  newTag: v2.21
+  newTag: v2.2
 
 patches:
 - path: app_patch.yaml
