@@ -14,6 +14,12 @@ spec:
         exclude: true
       # - path: tss/hall/base/*
       #   exclude: true
+
+  - template:
+      syncPolicy:
+        automated:
+          selfHeal: true
+
   template:
     metadata:
       name: '{{path.basename}}'
@@ -26,7 +32,3 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: tss-hall
-    syncPolicy:
-      automated:
-        # prune: true
-        selfHeal: true
