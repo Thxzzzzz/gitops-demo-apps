@@ -6,8 +6,7 @@ resources:
 
 replacements:
   - path: replacement.yaml
-
-
+  
 labels:
   - pairs:
       app: demobiz2-kustomize

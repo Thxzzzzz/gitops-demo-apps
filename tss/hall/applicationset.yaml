@@ -12,8 +12,6 @@ spec:
       - path: tss/hall/*
       - path: tss/hall/base
         exclude: true
-      # - path: tss/hall/base/*
-      #   exclude: true
   template:
     metadata:
       name: '{{path.basename}}'
@@ -28,3 +26,5 @@ spec:
         namespace: tss-hall
       syncPolicy:
         automated: {}
+
+        

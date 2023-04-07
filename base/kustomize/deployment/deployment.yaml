@@ -18,3 +18,4 @@ spec:
       - name: biz-container
         image: app_image:app_tag
         imagePullPolicy: IfNotPresent
+
