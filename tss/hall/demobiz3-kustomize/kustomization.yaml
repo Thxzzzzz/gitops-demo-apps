@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base/deployment
+
+
+replacements:
+  - path: replacement.yaml
+  
+labels:
+  - pairs:
+      app: demobi3-kustomize
+
+images:
+  - name: app_image
+    newName: 379809513/demo-biz
+    newTag: v2.3
