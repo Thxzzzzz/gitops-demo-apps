@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - ../base/deployment
-- ../base/service
+# - ../base/service
 
 # components:
 #   - ../../../base/kustomize/component/replacement
