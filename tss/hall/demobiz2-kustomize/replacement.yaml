@@ -1,10 +1,10 @@
-source:
-  kind: Deployment
-  fieldPath: metadata.labels.app
-targets:
-  - select:
-      kind: Deployment
-    fieldPaths:
-      - metadata.name
-      - spec.selector.matchLabels.app
-      - spec.template.metadata.labels.app
+- source:
+    kind: Deployment
+    fieldPath: metadata.labels.app
+  targets:
+    - select:
+        kind: Deployment
+      fieldPaths:
+        - metadata.name
+        - spec.selector.matchLabels.app
+        - spec.template.metadata.labels.app
