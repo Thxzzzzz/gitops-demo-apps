@@ -1,4 +1,4 @@
 deployment:
   appName: demobiz-helm
-  namespace: tss-hall
+#  namespace: tss-hall
   image: 379809513/demo-biz:v2.2

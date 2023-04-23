@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-biz-originyam
-  namespace: tss-hall
+#  namespace: tss-hall
 spec:
   # replicas: 1
   revisionHistoryLimit: 3
