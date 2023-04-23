@@ -4,6 +4,8 @@ metadata:
   name: tss-hall
   namespace: argocd
 spec:
+  syncPolicy:
+      preserveResourcesOnDeletion: true
   generators:
   - git:
       repoURL: https://github.com/Thxzzzzz/gitops-demo-apps.git
@@ -26,6 +28,5 @@ spec:
         namespace:  gitops-demo
       syncPolicy:
         automated: {}
-        preserveResourcesOnDeletion: true
 
         
