@@ -26,5 +26,6 @@ spec:
         namespace:  gitops-demo
       syncPolicy:
         automated: {}
+        preserveResourcesOnDeletion: true
 
         
